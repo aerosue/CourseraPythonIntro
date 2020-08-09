@@ -1,5 +1,5 @@
 
-
+#%%
 ##Intro Lab
 # What version of Python am I using
 import sys 
@@ -25,7 +25,7 @@ print("the first letter is:")
 print(cats_names[0])
 print(cats_names[-len(cats_names)])
 
-
+#%%
 ##Tuples lab
 #Basics
 tuple1 = ("disco", 10, 1.2)
@@ -82,7 +82,7 @@ print("Let's get to the bottom of the tree!")
 print(NestedT[4][1][0])
 print(NestedT[4][1][1])
 
-
+#%%
 ##Lists lab
 # Create and index a list
 print("")
@@ -102,6 +102,7 @@ print("")
 print("Lists can contain tuples.")
 L2 = ["Cyndi Lauper", 10.1, 1982, [1, 2], ("A", 1)]
 print("\n",L2)
+
 #List mutations
 print("")
 print("Lists are mutable.")
@@ -130,6 +131,7 @@ print("With the commands Lnew[0] = 'Lizzo' and Lnew[3] = 'pop', the variable Lne
 print("")
 del(Lnew[3])
 print("\n With the command del(Lnew[3]), Lnew becomes the following. \n",Lnew)
+
 #List splits
 print("")
 print("The split function splits strings into a list.")
@@ -138,18 +140,55 @@ print("")
 A = "A,B,C,D"
 Asplit = A.split(",")
 print("Here is an example of splitting on a comma for a new string variable A and assigned the result to a new variable Asplit. \n A = ",A,"\n Asplit = ",Asplit)
+
 #Copying and cloning
 print("")
 B = Asplit
 print("When you copy a variable, the variables both reference the same elements in memory. For instance, consider the opearation B = Asplit. \n B = ",B)
 Asplit[1] = "banana"
-print("\n When an element of A is changed, B is changed also. Here is the result of B after the operation Asplit[1] = 'banana.' \n B = ", B)
-print("Let's now reassign")
+print("\n When an element of Asplit is changed, B is changed also. Here is the result of B after the operation Asplit[1] = 'banana.' \n B = ", B)
+print("")
+B = Asplit[:]
+print("Let's now reassign B as a clone of Asplit with B = Asplit[:]. \n B = ",B)
+Asplit[1] = 'barbacoa'
+print("\n When we change Asplit[1] to 'barbacoa,' the cloned variable B is not affected. \n Asplit = ", Asplit, "\n B = ",B)
 
+#%%
+##Dictionaries Lab
+#Keys and values
+Dict = {"key1": 1, "key2": "2", "key3": [3, 3, 3], "key4": (4, 4, 4), ('key5'): 5, (0, 1): 6}
+print("")
+print("These are Dictionary exercises.")
+print("")
+print("Here is a dictionary call 'Dict.'\n",Dict)
+print("")
+print("The command Dict['key1'] produces the following. \n",Dict["key1"])
+print("The command Dict[(0,1)] produces the following. \n",Dict[(0,1)])
+release_year_dict = {"Thriller": "1982", "Back in Black": "1980", \
+                    "The Dark Side of the Moon": "1973", "The Bodyguard": "1992", \
+                    "Bat Out of Hell": "1977", "Their Greatest Hits (1971-1975)": "1976", \
+                    "Saturday Night Fever": "1977", "Rumours": "1977"}
+print("")
+print("Here's another sample dictionary called 'release_year_dict.'\n", release_year_dict)
+print("")
+print("To get the release year for Thriller, we execute the command release_year_dict['Thriller'] which produces the following. \n",release_year_dict["Thriller"])
+print("")
+print("For The Bodyguard, the release year was",release_year_dict["The Bodyguard"],".")
+print("")
+print("All keys:\n",release_year_dict.keys())
+print("All values: \n", release_year_dict.values())
 
-
-
-
-
+#Append and delete
+release_year_dict["Graduation"] = "2007"
+print("")
+print("We can append a key and value pair, such as 'Graduation' from 2007 using the command release_year_dict['Graduation']='2007'. \n",release_year_dict)
+del(release_year_dict["Graduation"])
+del(release_year_dict["Thriller"])
+print("")
+print("We can also delete entries from the dictionary using the command del. \n", release_year_dict)
+print("")
+print("We can see if something is in a dictionary using the command in. \n")
+print("'The Bodyguard' in release_year_dict produces the boolean 'True'. \n")
+"The Bodyguard" in release_year_dict
 
 
