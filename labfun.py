@@ -191,4 +191,83 @@ print("We can see if something is in a dictionary using the command in. \n")
 print("'The Bodyguard' in release_year_dict produces the boolean 'True'. \n")
 "The Bodyguard" in release_year_dict
 
+##SETS LAB
+#Create set
+print("")
+set1 = {"pop", "rock", "soul", "hard rock", "rock", "R&B", "rock", "disco"}
+set1
 
+#Convert lists to sets
+print("")
+album_list = [ "Michael Jackson", "Thriller", 1982, "00:42:19", \
+              "Pop, Rock, R&B", 46.0, 65, "30-Nov-82", None, 10.0]
+album_set = set(album_list)             
+print(album_set)
+print("")
+music_genres = set(["pop", "pop", "rock", "folk rock", "hard rock", "soul", \
+                    "progressive rock", "soft rock", "R&B", "disco"])
+music_genres
+print(music_genres)
+print("")
+
+#Add/remove/in exercises with set operations
+
+A = set(["Thriller", "Back in Black", "AC/DC"])
+A
+print("A was", A)
+A.add("NSync")
+print("Now A is",A,"after A.add is used.")
+A.remove("NSync")
+print("Now A is",A,"after A.remove is used.")
+"AC/DC" in A
+if "AC/DC" in A:
+    print("Yes, AC/DC is in set A.\n")
+    
+#Intersection/difference operations
+album_set1 = set(["Thriller", 'AC/DC', 'Back in Black'])
+album_set2 = set([ "AC/DC", "Back in Black", "The Dark Side of the Moon"])
+album_sets_inter = album_set1 & album_set2
+album_sets_all = album_set1.union(album_set2)
+print("Jamal's albums are",album_set1,"and Lena's album's are",album_set2,".")
+print("Intersecting all album sets results in",album_sets_inter)
+print("What's unique to Jamal's collection?")
+print(album_set1.difference(album_set2))
+print("What's unique to Lena's collection?")
+print(album_set2.difference(album_set1))
+print("What's common to both collections?")
+print(album_sets_inter)
+print("What's the result of combining the collections?")
+print(album_sets_all,"\n")
+
+
+#Supersets and subsets
+print("Is Jamal's album collection a superset of Lena's?")
+if album_set1.issuperset(album_set2):
+    print("Yes")
+else: 
+    print("No")
+
+print("Is the union of Jamal's and Lena's albums a superset of both?")
+if(album_sets_all.issuperset(album_set1) and album_sets_all.issuperset(album_set2)):
+    print("Yes")
+else:
+    print("No")
+print("Is AC/DC, Back in Black a subset of Lena's album collection?")
+if({"AC/DC","Back in Black"}.issubset(album_set2)): print("Yes")
+else: print("No")
+       
+
+  
+
+
+
+        
+        
+        
+        
+    
+
+        
+
+
+    
